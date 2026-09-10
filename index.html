@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Procure Wealth — research and ideas on business, markets, ownership, and how wealth is actually built.">
+<title>Procure Wealth</title>
+<style>
+:root{
+  --ink:#10211c;
+  --green:#0b5a46;
+  --green-deep:#073c31;
+  --cream:#f7f4ec;
+  --muted:#69736e;
+  --line:rgba(11,90,70,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 78% 24%, rgba(11,90,70,.12), transparent 31%),
+    radial-gradient(circle at 16% 78%, rgba(11,90,70,.08), transparent 25%),
+    linear-gradient(135deg,#fbfaf6 0%,#f3eee3 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:620px;height:620px;
+  right:-170px;top:-180px;
+  border-radius:50%;
+  border:1px solid rgba(11,90,70,.16);
+  box-shadow:inset 0 0 90px rgba(11,90,70,.05);
+  animation:drift 12s ease-in-out infinite alternate;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:440px;height:440px;
+  left:-170px;bottom:-120px;
+  border-radius:50%;
+  border:1px solid rgba(11,90,70,.12);
+  animation:drift2 16s ease-in-out infinite alternate;
+}
+@keyframes drift{to{transform:translate(-24px,18px) scale(1.03)}}
+@keyframes drift2{to{transform:translate(22px,-16px) scale(1.04)}}
+.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto;position:relative;z-index:2}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:28px 0;border-bottom:1px solid var(--line)
+}
+.logo{
+  width:230px;max-width:54vw;height:auto;display:block;
+}
+.topline{
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)
+}
+.grid{
+  min-height:calc(100vh - 110px);
+  display:grid;grid-template-columns:1.05fr .95fr;
+  align-items:center;gap:70px;padding:56px 0 48px;
+}
+.kicker{
+  display:flex;align-items:center;gap:12px;
+  color:var(--green);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  margin-bottom:22px
+}
+.kicker::before{content:"";width:38px;height:1px;background:var(--green)}
+h1{
+  margin:0 0 26px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:500;
+  font-size:clamp(58px,7vw,104px);
+  line-height:.93;letter-spacing:-.045em;
+}
+h1 .mid{color:var(--green)}
+.lede{
+  max-width:700px;margin:0 0 34px;
+  font-size:clamp(19px,2vw,25px);line-height:1.55;color:#394943
+}
+.socials{
+  display:flex;flex-wrap:wrap;gap:15px 22px;
+  font-size:13px;letter-spacing:.07em
+}
+.socials a{padding-bottom:5px;border-bottom:1px solid transparent;transition:.2s}
+.socials a:hover{border-color:var(--green);color:var(--green)}
+.visual{
+  position:relative;min-height:520px;
+  display:flex;align-items:center;justify-content:center
+}
+.ring{
+  position:relative;
+  width:min(430px,80vw);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(11,90,70,.22);
+  background:
+    radial-gradient(circle at 38% 34%, rgba(255,255,255,.92), transparent 26%),
+    radial-gradient(circle at 54% 58%, rgba(11,90,70,.20), rgba(11,90,70,.035) 64%, transparent 73%);
+  box-shadow:inset 0 0 80px rgba(11,90,70,.06);
+  animation:float 8s ease-in-out infinite alternate;
+}
+.ring::before,.ring::after{
+  content:"";position:absolute;border-radius:50%;
+  border:1px solid rgba(11,90,70,.18);
+  inset:13%;animation:spin 22s linear infinite
+}
+.ring::after{inset:27%;animation-direction:reverse;animation-duration:16s}
+.chart{
+  position:absolute;inset:0;
+  display:flex;align-items:flex-end;justify-content:center;
+  gap:22px;padding:0 24% 27%
+}
+.chart span{
+  width:18%;background:linear-gradient(180deg,#14765d,#0b5a46);
+  border-radius:4px 4px 0 0;transform-origin:bottom;
+  animation:pulse 3.3s ease-in-out infinite alternate
+}
+.chart span:nth-child(1){height:29%}
+.chart span:nth-child(2){height:47%;animation-delay:.25s}
+.chart span:nth-child(3){height:68%;animation-delay:.5s}
+.chart span:nth-child(4){height:89%;animation-delay:.75s}
+.arrowline{
+  position:absolute;left:23%;top:22%;
+  width:55%;height:48%;
+  border-top:6px solid var(--green);
+  border-right:6px solid var(--green);
+  border-radius:55% 8px 0 0;
+  transform:rotate(-27deg) skew(-10deg);
+  animation:arrowmove 4s ease-in-out infinite alternate
+}
+@keyframes float{to{transform:translateY(-10px) scale(1.012)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{from{transform:scaleY(.86)}to{transform:scaleY(1)}}
+@keyframes arrowmove{to{transform:translate(7px,-6px) rotate(-27deg) skew(-10deg)}}
+.ticker{
+  position:absolute;left:0;right:0;bottom:0;z-index:3;
+  overflow:hidden;border-top:1px solid rgba(11,90,70,.18);
+  background:rgba(247,244,236,.76);backdrop-filter:blur(8px)
+}
+.track{
+  display:flex;width:max-content;gap:34px;padding:14px 0;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#53615c;
+  animation:scroll 26s linear infinite
+}
+.track span::after{content:"→";margin-left:34px;color:var(--green)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+footer{
+  position:absolute;left:0;right:0;bottom:46px;z-index:2;
+  pointer-events:none
+}
+.foot{
+  width:min(1180px,calc(100% - 40px));margin:0 auto;
+  display:flex;justify-content:space-between;gap:20px;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#77807c
+}
+@media(max-width:860px){
+  .wrap{width:min(100% - 28px,700px)}
+  header{padding:20px 0}.logo{width:190px}.topline{display:none}
+  .grid{grid-template-columns:1fr;gap:26px;padding:42px 0 110px}
+  .visual{order:-1;min-height:330px}.ring{width:min(320px,80vw)}
+  h1{font-size:clamp(56px,17vw,82px)}
+  .lede{font-size:18px}
+  .foot{width:min(100% - 28px,700px);flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="wrap">
+    <header>
+      <img class="logo" src="procure-wealth-logo-transparent.png" alt="Procure Wealth">
+      <div class="topline">Business • Markets • Ownership</div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="kicker">Independent financial media</div>
+        <h1>BUILD.<br><span class="mid">OWN.</span><br>GROW.</h1>
+        <p class="lede">Research and ideas on business, markets, ownership, and how wealth is actually built — without the hype.</p>
+        <nav class="socials" aria-label="Procure Wealth social links">
+          <a href="https://www.youtube.com/@ProcureWealth" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://x.com/procurewealth" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/procurewealth/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.threads.net/@procurewealth" target="_blank" rel="noopener">Threads</a>
+          <a href="https://www.tiktok.com/@procurewealth" target="_blank" rel="noopener">TikTok</a>
+        </nav>
+      </div>
+
+      <div class="visual" aria-label="Animated growth motif">
+        <div class="ring">
+          <div class="chart" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="arrowline" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span>© 2026 Procure Wealth</span>
+      <span>Better information. Bigger possibilities.</span>
+    </div>
+  </footer>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>Business</span><span>Markets</span><span>Ownership</span><span>Ideas</span><span>Capital</span><span>Opportunity</span>
+      <span>Business</span><span>Markets</span><span>Ownership</span><span>Ideas</span><span>Capital</span><span>Opportunity</span>
+    </div>
+  </div>
+</section>
+</body>
+</html>
